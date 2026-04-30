@@ -1,0 +1,6 @@
+node_modules/
+logs/
+.env
+_test-out/
+# run.bat contains your Obsidian API key — never commit it
+run.bat

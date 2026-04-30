@@ -1,0 +1,15 @@
+{
+  "name": "polymarket-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Track top 50 Polymarket CRYPTO traders' BTC up/down 5m bets and log them to Obsidian.",
+  "scripts": {
+    "start": "node track.mjs",
+    "dry-run": "node track.mjs --dry-run",
+    "reset": "node -e \"require('fs').writeFileSync('state.json', '{}')\""
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

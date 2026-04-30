@@ -1,0 +1,55 @@
+name: Polymarket BTC 5m scan
+
+on:
+  schedule:
+    # Every 15 minutes. GitHub may delay scheduled runs by a few minutes
+    # under load — that's fine, the script dedupes by transactionHash.
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {} # allow manual trigger from the Actions tab
+
+# Only one scan in flight at a time. If a run is queued while another is
+# running, the queued one is cancelled — no duplicate commits.
+concurrency:
+  group: poly-scan
+  cancel-in-progress: false
+
+permissions:
+  contents: write # we commit state.json + data/*.md back to the repo
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Need full history for git push
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run scan
+        run: node track.mjs
+        env:
+          OUTPUT_MODE: file
+          DATA_DIR: data/btc-5m
+
+      - name: Commit changes
+        run: |
+          git config user.name "polymarket-tracker[bot]"
+          git config user.email "polymarket-tracker[bot]@users.noreply.github.com"
+          # Stage only what the script writes
+          git add state.json data/btc-5m || true
+          if git diff --cached --quiet; then
+            echo "No new trades — nothing to commit."
+            exit 0
+          fi
+          STAMP=$(date -u +'%Y-%m-%d %H:%M UTC')
+          git commit -m "scan: $STAMP"
+          # Pull --rebase in case another (manual) commit landed
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"

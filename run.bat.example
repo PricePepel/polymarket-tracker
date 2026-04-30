@@ -1,0 +1,18 @@
+@echo off
+REM Local-mode wrapper. Copy to run.bat and fill in your Obsidian REST API key.
+REM (run.bat is gitignored to keep the key out of the repo.)
+
+setlocal
+cd /d "%~dp0"
+
+REM Get this key from Obsidian → Settings → Community Plugins → Local REST API
+set OBSIDIAN_API_KEY=YOUR_OBSIDIAN_API_KEY_HERE
+set OBSIDIAN_HOST=https://127.0.0.1:27124
+
+if not exist logs mkdir logs
+
+for /f "tokens=2 delims==" %%a in ('wmic os get LocalDateTime /value 2^>nul ^| find "="') do set DATETIME=%%a
+set TODAY=%DATETIME:~0,8%
+
+node track.mjs >> "logs\%TODAY%.log" 2>&1
+endlocal
