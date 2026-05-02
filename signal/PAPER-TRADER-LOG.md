@@ -5,20 +5,20 @@ _Do not edit by hand — changes will be overwritten._
 
 ## Running totals
 
-- **Bankroll:** $27.98 (started $20.00)
-- **All-time PnL:** +$7.98 (+39.91%)
+- **Bankroll:** $28.88 (started $20.00)
+- **All-time PnL:** +$8.88 (+44.42%)
 - **Mode:** PAPER
-- **W/L:** 10 / 2  (hit rate 83%)
-- **Scans completed:** 124
-- **Open tickets:** 1
+- **W/L:** 11 / 2  (hit rate 85%)
+- **Scans completed:** 125
+- **Open tickets:** 0
 - **Consecutive losses:** 0
-- **Today (2026-05-02) PnL:** +$7.41
+- **Today (2026-05-02) PnL:** +$8.31
 
 ## Daily snapshots
 
 ### 2026-05-02
 
-Day PnL: **+$7.41** · W/L: **9/2** · trades: 11
+Day PnL: **+$8.31** · W/L: **10/2** · trades: 12
 
 | Time (UTC) | Side | Entry | Size | Outcome | Result | PnL |
 |---|---|---|---|---|---|---|
@@ -33,6 +33,7 @@ Day PnL: **+$7.41** · W/L: **9/2** · trades: 11
 | 22:28 | NO | $0.664 | $2.37 | DOWN | ✅ WIN | +$1.18 |
 | 22:38 | NO | $0.590 | $2.49 | DOWN | ✅ WIN | +$1.71 |
 | 22:43 | NO | $0.642 | $2.49 | DOWN | ✅ WIN | +$1.36 |
+| 22:58 | YES | $0.750 | $2.79 | UP | ✅ WIN | +$0.90 |
 
 ### 2026-05-01
 
@@ -43,4 +44,4 @@ Day PnL: **+$0.58** · W/L: **1/0** · trades: 1
 | 13:29 | NO | $0.770 | $2.00 | DOWN | ✅ WIN | +$0.58 |
 
 ---
-_Last updated: 2026-05-02T23:05:13.799Z_
+_Last updated: 2026-05-02T23:10:14.261Z_
