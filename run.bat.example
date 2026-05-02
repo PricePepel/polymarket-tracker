@@ -11,8 +11,9 @@ set OBSIDIAN_HOST=https://127.0.0.1:27124
 
 if not exist logs mkdir logs
 
-for /f "tokens=2 delims==" %%a in ('wmic os get LocalDateTime /value 2^>nul ^| find "="') do set DATETIME=%%a
-set TODAY=%DATETIME:~0,8%
+REM One log per day. Use PowerShell — wmic is deprecated on Windows 11 23H2+.
+for /f "usebackq delims=" %%a in (`powershell -NoProfile -Command "Get-Date -Format yyyyMMdd"`) do set TODAY=%%a
+if "%TODAY%"=="" set TODAY=unknown
 
 node track.mjs >> "logs\%TODAY%.log" 2>&1
 endlocal
