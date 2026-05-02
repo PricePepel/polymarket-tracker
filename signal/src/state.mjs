@@ -16,6 +16,7 @@ export const DEFAULT_STATE = {
   livePnl: 0,
   openTickets: [], // tickets emitted but whose market hasn't resolved yet
   closedTickets: [], // resolved tickets, append-only history
+  evaluatedSlugs: [], // slugs evaluated retroactively (FLAT or ticketed) — capped to last 200
   dailyStartBankroll: 20.0,
   dailyDate: null, // YYYY-MM-DD
   halted: false,

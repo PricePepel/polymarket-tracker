@@ -118,6 +118,95 @@ export function findOpenMarket(markets, nowMs) {
   return candidates[0];
 }
 
+// Recovery for cron drift: cron-job.org + GitHub Actions queueing means we
+// often don't fire inside any given market's 90s decision window. For each
+// market that closed within the last RETRO_LOOKBACK_MS but never got a ticket
+// (or a "we looked, said FLAT" record), compute features at the market's
+// calibrated decision moment and emit a retroactive PAPER ticket if criteria
+// fire. Always paper-only — we can't actually place a bet on a closed market.
+const RETRO_LOOKBACK_MS = 10 * 60 * 1000; // 10 min covers up to 2 missed cron cycles
+const EVALUATED_SLUGS_CAP = 200;
+
+export function evaluateRecentlyClosed({ state, markets, nowMs }) {
+  const known = new Set([
+    ...(state.closedTickets || []).map((t) => t.slug),
+    ...(state.openTickets || []).map((t) => t.slug),
+    ...(state.evaluatedSlugs || []),
+  ]);
+
+  // Closed within lookback, not already known. Sort oldest first so log order
+  // matches market chronology.
+  const candidates = markets
+    .filter(
+      (m) =>
+        m.marketEndTs <= nowMs &&
+        m.marketEndTs > nowMs - RETRO_LOOKBACK_MS &&
+        !known.has(m.slug)
+    )
+    .sort((a, b) => a.marketEndTs - b.marketEndTs);
+
+  const retroTickets = [];
+
+  for (const m of candidates) {
+    const decisionTs = m.marketEndTs - LOCKED_PARAMS.decisionBufferSec * 1000;
+    const f = featuresAtDecision({
+      trades: m.trades,
+      marketStartTs: m.marketStartTs,
+      marketEndTs: m.marketEndTs,
+      decisionTs,
+    });
+    const t = decideTicket(f, LOCKED_PARAMS);
+
+    // Mark as evaluated either way so we never re-process this slug.
+    state.evaluatedSlugs = [...(state.evaluatedSlugs || []), m.slug];
+    if (state.evaluatedSlugs.length > EVALUATED_SLUGS_CAP) {
+      state.evaluatedSlugs = state.evaluatedSlugs.slice(-EVALUATED_SLUGS_CAP);
+    }
+
+    if (t.side === "FLAT") continue;
+
+    const openExposure = state.openTickets.reduce(
+      (s, tk) => s + (tk.sizeUsd || 0),
+      0
+    );
+    const sizing = sizeTicket({
+      ticket: t,
+      winProb: LOCKED_WIN_PROB,
+      bankroll: state.bankroll,
+      openExposure,
+    });
+    if (sizing.sizeUsd <= 0) continue;
+
+    const ticket = {
+      // Use the decision moment as the emit time so the chronology in the log
+      // reflects when the bet *would* have been placed, not when we discovered it.
+      emittedAt: new Date(decisionTs).toISOString(),
+      retroactive: true,
+      discoveredAt: new Date(nowMs).toISOString(),
+      slug: m.slug,
+      marketStartTs: m.marketStartTs,
+      marketEndTs: m.marketEndTs,
+      side: t.side,
+      entryPrice: t.price,
+      observedPrice: t.observedPrice,
+      sizeUsd: sizing.sizeUsd,
+      winProb: LOCKED_WIN_PROB,
+      kellyFStar: sizing.fStar,
+      kellyFUsed: sizing.fUsed,
+      // Always PAPER — you cannot place a bet on a market that has closed.
+      mode: "PAPER",
+      riskNotes: ["retroactive (cron drift recovery)"],
+      netYesUsdLate: f.netYesUsdLate,
+      nTradesLate: f.nTradesLate,
+      hhi: f.hhiAll,
+    };
+    state.openTickets.push(ticket);
+    retroTickets.push(ticket);
+  }
+
+  return retroTickets;
+}
+
 // Generate one tick — returns {state, ticketLine} where ticketLine is the
 // markdown line to append to today's tickets file (or null if FLAT).
 export async function tick({
@@ -260,16 +349,41 @@ export async function tick({
     fs.appendFileSync(filePath, ticketLine + "\n");
   }
 
+  // Cron-drift recovery: catch any market that closed in the lookback window
+  // but never got a ticket. These get added to openTickets as PAPER and then
+  // settled in the same pass (their outcomes are already known).
+  const retroTickets = evaluateRecentlyClosed({ state, markets, nowMs });
+  if (retroTickets.length > 0) {
+    // Append retro lines to today's tickets file.
+    const today = TODAY_UTC();
+    const filePath = path.join(ticketsDir, `${today}.md`);
+    fs.mkdirSync(ticketsDir, { recursive: true });
+    for (const t of retroTickets) {
+      fs.appendFileSync(filePath, formatTicketLine(t) + "\n");
+    }
+    // Settle them in this same tick — their markets are already past close.
+    await settleOpenTickets(state, outcomesCache, nowMs);
+  }
+
+  // Persist outcomes cache (settle may have fetched new outcomes).
+  fs.mkdirSync(path.dirname(outcomesPath), { recursive: true });
+  fs.writeFileSync(outcomesPath, JSON.stringify(outcomesCache, null, 2));
+
   saveState(statePath, state);
 
-  return { state, summary, ticketLine };
+  return { state, summary, ticketLine, retroTickets };
 }
 
 function formatTicketLine(t) {
   const ts = t.emittedAt;
   const close = new Date(t.marketEndTs).toISOString().slice(11, 19) + "Z";
   const thesis = `late top-50 net ${t.netYesUsdLate >= 0 ? "+" : ""}$${t.netYesUsdLate.toFixed(0)} (${t.nTradesLate} trades, HHI ${t.hhi.toFixed(2)})`;
-  const verdict =
-    t.mode === "PAPER" ? "**PAPER**" : t.sizeUsd > 0 ? "LIVE" : "**FLAT**";
-  return `- \`${ts}\` ${verdict} **${t.side}** \`${t.slug}\` close=${close} entry=$${t.entryPrice.toFixed(3)} size=$${t.sizeUsd.toFixed(2)} kelly_f*=${t.kellyFStar.toFixed(3)} f_used=${t.kellyFUsed.toFixed(3)} — ${thesis}`;
+  const tag = t.retroactive
+    ? "**PAPER·RETRO**"
+    : t.mode === "PAPER"
+      ? "**PAPER**"
+      : t.sizeUsd > 0
+        ? "LIVE"
+        : "**FLAT**";
+  return `- \`${ts}\` ${tag} **${t.side}** \`${t.slug}\` close=${close} entry=$${t.entryPrice.toFixed(3)} size=$${t.sizeUsd.toFixed(2)} kelly_f*=${t.kellyFStar.toFixed(3)} f_used=${t.kellyFUsed.toFixed(3)} — ${thesis}`;
 }
