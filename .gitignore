@@ -4,3 +4,8 @@ logs/
 _test-out/
 # run.bat contains your Obsidian API key — never commit it
 run.bat
+# signal: local-only files
+signal/.env
+signal/logs/
+signal/node_modules/
+signal/_test-out/

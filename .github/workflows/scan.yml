@@ -40,14 +40,29 @@ jobs:
           OUTPUT_MODE: file
           DATA_DIR: data/btc-5m
 
+      - name: Run signal tick
+        # Reads tracker data, settles open paper tickets, decides new ones,
+        # writes signal/state.json + signal/tickets/YYYY-MM-DD.md.
+        # Failures here MUST NOT block the tracker commit — paper-only.
+        continue-on-error: true
+        run: node signal/bin/live.mjs
+        env:
+          SIGNAL_DATA_DIR: data/btc-5m
+          # Optional notification channels — set as repo secrets if wanted.
+          # Missing secrets are no-ops inside notify.mjs (returns { skipped }).
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+
       - name: Commit changes
         run: |
           git config user.name "polymarket-tracker[bot]"
           git config user.email "polymarket-tracker[bot]@users.noreply.github.com"
-          # Stage only what the script writes
-          git add state.json data/btc-5m || true
+          # Stage only what the scripts write
+          git add state.json data/btc-5m signal/state.json signal/cache signal/tickets || true
           if git diff --cached --quiet; then
-            echo "No new trades — nothing to commit."
+            echo "No changes — nothing to commit."
             exit 0
           fi
           STAMP=$(date -u +'%Y-%m-%d %H:%M UTC')

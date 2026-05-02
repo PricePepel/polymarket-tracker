@@ -1,0 +1,17 @@
+{
+  "name": "polymarket-signal",
+  "version": "0.1.0",
+  "description": "Signal + sizing engine for Polymarket BTC up/down 5m markets. Advisory only — emits paper tickets, does not execute trades.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "stats": "node bin/stats.mjs",
+    "resolve": "node bin/resolve.mjs",
+    "backtest": "node bin/backtest.mjs",
+    "live": "node bin/live.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
