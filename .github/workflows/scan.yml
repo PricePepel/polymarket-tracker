@@ -67,6 +67,7 @@ jobs:
           fi
           STAMP=$(date -u +'%Y-%m-%d %H:%M UTC')
           git commit -m "scan: $STAMP"
-          # Pull --rebase in case another (manual) commit landed
-          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          # Pull --rebase in case another (manual) commit landed.
+          # Fail loudly on conflict so the next push doesn't silently lose work.
+          git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"

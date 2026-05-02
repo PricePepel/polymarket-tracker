@@ -11,10 +11,12 @@ import { tick } from "../src/live.mjs";
 const __filename = fileURLToPath(import.meta.url);
 const root = path.resolve(path.dirname(__filename), "..");
 
+// Default to the tracker's data dir relative to the repo root (works in CI
+// and local checkouts). SIGNAL_DATA_DIR can override for ad-hoc runs.
+const defaultDataDir = path.resolve(root, "..", "data", "btc-5m");
+
 const result = await tick({
-  dataDir:
-    process.env.SIGNAL_DATA_DIR ||
-    "C:\\Users\\Asus\\Documents\\Obsidian Vault\\Polymarket-Tracker\\data\\btc-5m",
+  dataDir: process.env.SIGNAL_DATA_DIR || defaultDataDir,
   outcomesPath: path.join(root, "cache", "outcomes.json"),
   ticketsDir: path.join(root, "tickets"),
   statePath: path.join(root, "state.json"),
