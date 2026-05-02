@@ -3,13 +3,39 @@
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
-  "paperRemainingScans": 24,
-  "paperScanCount": 26,
+  "paperRemainingScans": 23,
+  "paperScanCount": 27,
   "paperWins": 1,
   "paperLosses": 0,
   "paperPnl": 0.5774025974025974,
   "livePnl": 0,
-  "openTickets": [],
+  "openTickets": [
+    {
+      "emittedAt": "2026-05-02T08:48:33.882Z",
+      "slug": "btc-updown-5m-1777711500",
+      "marketStartTs": 1777711500000,
+      "marketEndTs": 1777711800000,
+      "side": "NO",
+      "entryPrice": 0.5700000000000001,
+      "observedPrice": 0.55,
+      "sizeUsd": 2.05,
+      "winProb": 0.882,
+      "kellyFStar": 0.7255813953488371,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "paper scans remaining: 23",
+        "mode=PAPER"
+      ],
+      "netYesUsdLate": -78.63,
+      "nTradesLate": 27,
+      "hhi": 0.4738656815621848,
+      "notifyResult": {
+        "telegram": false,
+        "notion": false
+      }
+    }
+  ],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
