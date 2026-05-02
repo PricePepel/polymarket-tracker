@@ -1,40 +1,15 @@
 {
-  "bankroll": 18.506902597402597,
+  "bankroll": 20.128968635138445,
   "startingBankroll": 20,
   "mode": "PAPER",
-  "consecutiveLosses": 1,
+  "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 58,
-  "paperWins": 1,
+  "paperScanCount": 59,
+  "paperWins": 2,
   "paperLosses": 1,
-  "paperPnl": -1.4930974025974026,
+  "paperPnl": 0.12896863513844625,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-02T17:58:54.288Z",
-      "slug": "btc-updown-5m-1777744500",
-      "marketStartTs": 1777744500000,
-      "marketEndTs": 1777744800000,
-      "side": "NO",
-      "entryPrice": 0.53,
-      "observedPrice": 0.51,
-      "sizeUsd": 1.85,
-      "winProb": 0.882,
-      "kellyFStar": 0.748936170212766,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "mode=PAPER"
-      ],
-      "netYesUsdLate": -31.12,
-      "nTradesLate": 2,
-      "hhi": 0.46868420067768,
-      "notifyResult": {
-        "telegram": false,
-        "notion": false
-      }
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -89,6 +64,34 @@
       "pnlUsd": -2.0705,
       "won": false,
       "settledAt": "2026-05-02T09:51:47.632Z"
+    },
+    {
+      "emittedAt": "2026-05-02T17:58:54.288Z",
+      "slug": "btc-updown-5m-1777744500",
+      "marketStartTs": 1777744500000,
+      "marketEndTs": 1777744800000,
+      "side": "NO",
+      "entryPrice": 0.53,
+      "observedPrice": 0.51,
+      "sizeUsd": 1.85,
+      "winProb": 0.882,
+      "kellyFStar": 0.748936170212766,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "mode=PAPER"
+      ],
+      "netYesUsdLate": -31.12,
+      "nTradesLate": 2,
+      "hhi": 0.46868420067768,
+      "notifyResult": {
+        "telegram": false,
+        "notion": false
+      },
+      "outcome": "DOWN",
+      "pnlUsd": 1.6221,
+      "won": true,
+      "settledAt": "2026-05-02T18:05:13.558Z"
     }
   ],
   "dailyStartBankroll": 20.577402597402596,
