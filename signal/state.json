@@ -4,7 +4,7 @@
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 84,
+  "paperScanCount": 85,
   "paperWins": 2,
   "paperLosses": 1,
   "paperPnl": 0.12896863513844625,
@@ -93,6 +93,10 @@
       "won": true,
       "settledAt": "2026-05-02T18:05:13.558Z"
     }
+  ],
+  "evaluatedSlugs": [
+    "btc-updown-5m-1777751700",
+    "btc-updown-5m-1777752000"
   ],
   "dailyStartBankroll": 20.577402597402596,
   "dailyDate": "2026-05-02",
