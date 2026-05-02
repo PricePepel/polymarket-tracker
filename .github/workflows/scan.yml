@@ -55,12 +55,18 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
 
+      - name: Update paper-trader log
+        # Regenerate signal/PAPER-TRADER-LOG.md from state.json. Idempotent.
+        # Lands in the user's Obsidian vault via the Obsidian Git plugin.
+        continue-on-error: true
+        run: node signal/bin/update-log.mjs
+
       - name: Commit changes
         run: |
           git config user.name "polymarket-tracker[bot]"
           git config user.email "polymarket-tracker[bot]@users.noreply.github.com"
           # Stage only what the scripts write
-          git add state.json data/btc-5m signal/state.json signal/cache signal/tickets || true
+          git add state.json data/btc-5m signal/state.json signal/cache signal/tickets signal/PAPER-TRADER-LOG.md || true
           if git diff --cached --quiet; then
             echo "No changes — nothing to commit."
             exit 0
