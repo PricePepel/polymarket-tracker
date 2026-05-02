@@ -1,41 +1,15 @@
 {
-  "bankroll": 20.577402597402596,
+  "bankroll": 18.506902597402597,
   "startingBankroll": 20,
   "mode": "PAPER",
-  "consecutiveLosses": 0,
-  "paperRemainingScans": 23,
-  "paperScanCount": 27,
+  "consecutiveLosses": 1,
+  "paperRemainingScans": 22,
+  "paperScanCount": 28,
   "paperWins": 1,
-  "paperLosses": 0,
-  "paperPnl": 0.5774025974025974,
+  "paperLosses": 1,
+  "paperPnl": -1.4930974025974026,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-02T08:48:33.882Z",
-      "slug": "btc-updown-5m-1777711500",
-      "marketStartTs": 1777711500000,
-      "marketEndTs": 1777711800000,
-      "side": "NO",
-      "entryPrice": 0.5700000000000001,
-      "observedPrice": 0.55,
-      "sizeUsd": 2.05,
-      "winProb": 0.882,
-      "kellyFStar": 0.7255813953488371,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "paper scans remaining: 23",
-        "mode=PAPER"
-      ],
-      "netYesUsdLate": -78.63,
-      "nTradesLate": 27,
-      "hhi": 0.4738656815621848,
-      "notifyResult": {
-        "telegram": false,
-        "notion": false
-      }
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -61,6 +35,35 @@
       "pnlUsd": 0.5774,
       "won": true,
       "settledAt": "2026-05-01T14:29:48.478Z"
+    },
+    {
+      "emittedAt": "2026-05-02T08:48:33.882Z",
+      "slug": "btc-updown-5m-1777711500",
+      "marketStartTs": 1777711500000,
+      "marketEndTs": 1777711800000,
+      "side": "NO",
+      "entryPrice": 0.5700000000000001,
+      "observedPrice": 0.55,
+      "sizeUsd": 2.05,
+      "winProb": 0.882,
+      "kellyFStar": 0.7255813953488371,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "paper scans remaining: 23",
+        "mode=PAPER"
+      ],
+      "netYesUsdLate": -78.63,
+      "nTradesLate": 27,
+      "hhi": 0.4738656815621848,
+      "notifyResult": {
+        "telegram": false,
+        "notion": false
+      },
+      "outcome": "UP",
+      "pnlUsd": -2.0705,
+      "won": false,
+      "settledAt": "2026-05-02T09:51:47.632Z"
     }
   ],
   "dailyStartBankroll": 20.577402597402596,
