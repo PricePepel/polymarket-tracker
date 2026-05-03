@@ -73,7 +73,12 @@ jobs:
           fi
           STAMP=$(date -u +'%Y-%m-%d %H:%M UTC')
           git commit -m "scan: $STAMP"
-          # Pull --rebase in case another (manual) commit landed.
-          # Fail loudly on conflict so the next push doesn't silently lose work.
-          git pull --rebase origin "${GITHUB_REF_NAME}"
+          # Pull --rebase in case another scan landed during our run.
+          # `-X theirs` auto-resolves conflicts by keeping THIS run's version
+          # (rebase nomenclature: "theirs" = the commit being replayed = ours).
+          # Safe because every committed file is either fully derived from
+          # state.json (PAPER-TRADER-LOG.md) or idempotent under re-running
+          # the tick. A pure rebase failure (dropping our work silently) is
+          # worse than auto-resolving in our favour.
+          git pull --rebase -X theirs origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
