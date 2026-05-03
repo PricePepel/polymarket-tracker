@@ -4,7 +4,7 @@
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 302,
+  "paperScanCount": 303,
   "paperWins": 31,
   "paperLosses": 8,
   "paperPnl": 13.909880404767934,
@@ -1164,7 +1164,9 @@
     "btc-updown-5m-1777808700",
     "btc-updown-5m-1777809000",
     "btc-updown-5m-1777811100",
-    "btc-updown-5m-1777811400"
+    "btc-updown-5m-1777811400",
+    "btc-updown-5m-1777814100",
+    "btc-updown-5m-1777814400"
   ],
   "dailyStartBankroll": 28.88489158497459,
   "dailyDate": "2026-05-03",
