@@ -1,13 +1,13 @@
 {
-  "bankroll": 35.204555392744695,
+  "bankroll": 37.6870912418013,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 343,
-  "paperWins": 36,
+  "paperScanCount": 344,
+  "paperWins": 37,
   "paperLosses": 9,
-  "paperPnl": 15.204555392744698,
+  "paperPnl": 17.6870912418013,
   "livePnl": 0,
   "openTickets": [],
   "closedTickets": [
@@ -1186,6 +1186,32 @@
       "pnlUsd": 0.4115,
       "won": true,
       "settledAt": "2026-05-03T15:40:22.327Z"
+    },
+    {
+      "emittedAt": "2026-05-03T16:23:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-03T16:30:22.061Z",
+      "slug": "btc-updown-5m-1777825200",
+      "marketStartTs": 1777825200000,
+      "marketEndTs": 1777825500000,
+      "side": "YES",
+      "entryPrice": 0.583,
+      "observedPrice": 0.563,
+      "sizeUsd": 3.52,
+      "winProb": 0.882,
+      "kellyFStar": 0.7170263788968826,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": 313.72,
+      "nTradesLate": 38,
+      "hhi": 0.23606759732759902,
+      "outcome": "UP",
+      "pnlUsd": 2.4825,
+      "won": true,
+      "settledAt": "2026-05-03T16:30:22.061Z"
     }
   ],
   "evaluatedSlugs": [
@@ -1343,7 +1369,9 @@
     "btc-updown-5m-1777822200",
     "btc-updown-5m-1777822500",
     "btc-updown-5m-1777823700",
-    "btc-updown-5m-1777824000"
+    "btc-updown-5m-1777824000",
+    "btc-updown-5m-1777825200",
+    "btc-updown-5m-1777825500"
   ],
   "dailyStartBankroll": 28.88489158497459,
   "dailyDate": "2026-05-03",
