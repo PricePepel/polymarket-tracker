@@ -1,38 +1,15 @@
 {
-  "bankroll": 67.76867850432978,
+  "bankroll": 73.46801554136682,
   "startingBankroll": 20,
   "mode": "PAPER",
-  "consecutiveLosses": 3,
-  "paperRemainingScans": 9,
-  "paperScanCount": 532,
-  "paperWins": 65,
+  "consecutiveLosses": 0,
+  "paperRemainingScans": 8,
+  "paperScanCount": 533,
+  "paperWins": 66,
   "paperLosses": 15,
-  "paperPnl": 47.76867850432979,
+  "paperPnl": 53.468015541366825,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-04T07:23:30.000Z",
-      "retroactive": true,
-      "discoveredAt": "2026-05-04T07:25:16.191Z",
-      "slug": "btc-updown-5m-1777879200",
-      "marketStartTs": 1777879200000,
-      "marketEndTs": 1777879500000,
-      "side": "NO",
-      "entryPrice": 0.54,
-      "observedPrice": 0.52,
-      "sizeUsd": 6.77,
-      "winProb": 0.882,
-      "kellyFStar": 0.7434782608695653,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "retroactive (cron drift recovery)"
-      ],
-      "netYesUsdLate": -68.10000000000002,
-      "nTradesLate": 37,
-      "hhi": 0.19020537454772912
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -2119,6 +2096,32 @@
       "pnlUsd": -7.6053,
       "won": false,
       "settledAt": "2026-05-04T07:20:14.839Z"
+    },
+    {
+      "emittedAt": "2026-05-04T07:23:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-04T07:25:16.191Z",
+      "slug": "btc-updown-5m-1777879200",
+      "marketStartTs": 1777879200000,
+      "marketEndTs": 1777879500000,
+      "side": "NO",
+      "entryPrice": 0.54,
+      "observedPrice": 0.52,
+      "sizeUsd": 6.77,
+      "winProb": 0.882,
+      "kellyFStar": 0.7434782608695653,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": -68.10000000000002,
+      "nTradesLate": 37,
+      "hhi": 0.19020537454772912,
+      "outcome": "DOWN",
+      "pnlUsd": 5.6993,
+      "won": true,
+      "settledAt": "2026-05-04T07:30:28.293Z"
     }
   ],
   "evaluatedSlugs": [
