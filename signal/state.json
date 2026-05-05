@@ -1,40 +1,15 @@
 {
-  "bankroll": 134.25211634595468,
+  "bankroll": 120.69791634595468,
   "startingBankroll": 20,
   "mode": "PAPER",
-  "consecutiveLosses": 0,
+  "consecutiveLosses": 1,
   "paperRemainingScans": 0,
-  "paperScanCount": 992,
+  "paperScanCount": 993,
   "paperWins": 127,
-  "paperLosses": 33,
-  "paperPnl": 114.2521163459547,
+  "paperLosses": 34,
+  "paperPnl": 100.69791634595471,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-05T20:39:00.943Z",
-      "slug": "btc-updown-5m-1778013300",
-      "marketStartTs": 1778013300000,
-      "marketEndTs": 1778013600000,
-      "side": "YES",
-      "entryPrice": 0.64,
-      "observedPrice": 0.62,
-      "sizeUsd": 13.42,
-      "winProb": 0.882,
-      "kellyFStar": 0.6722222222222222,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "mode=PAPER"
-      ],
-      "netYesUsdLate": 652.2100000000004,
-      "nTradesLate": 51,
-      "hhi": 0.5589204503122852,
-      "notifyResult": {
-        "telegram": false,
-        "notion": false
-      }
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -4201,6 +4176,34 @@
       "pnlUsd": 5.6491,
       "won": true,
       "settledAt": "2026-05-05T20:35:14.440Z"
+    },
+    {
+      "emittedAt": "2026-05-05T20:39:00.943Z",
+      "slug": "btc-updown-5m-1778013300",
+      "marketStartTs": 1778013300000,
+      "marketEndTs": 1778013600000,
+      "side": "YES",
+      "entryPrice": 0.64,
+      "observedPrice": 0.62,
+      "sizeUsd": 13.42,
+      "winProb": 0.882,
+      "kellyFStar": 0.6722222222222222,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "mode=PAPER"
+      ],
+      "netYesUsdLate": 652.2100000000004,
+      "nTradesLate": 51,
+      "hhi": 0.5589204503122852,
+      "notifyResult": {
+        "telegram": false,
+        "notion": false
+      },
+      "outcome": "DOWN",
+      "pnlUsd": -13.5542,
+      "won": false,
+      "settledAt": "2026-05-05T20:45:23.692Z"
     }
   ],
   "evaluatedSlugs": [
