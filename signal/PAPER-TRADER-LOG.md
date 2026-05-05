@@ -9,8 +9,8 @@ _Do not edit by hand — changes will be overwritten._
 - **All-time PnL:** +$71.97 (+359.85%)
 - **Mode:** PAPER
 - **W/L:** 90 / 23  (hit rate 80%)
-- **Scans completed:** 737
-- **Open tickets:** 0
+- **Scans completed:** 738
+- **Open tickets:** 1
 - **Consecutive losses:** 0
 - **Today (2026-05-05) PnL:** +$4.42
 
@@ -165,4 +165,4 @@ Day PnL: **+$0.58** · W/L: **1/0** · trades: 1
 | 13:29 | NO | $0.770 | $2.00 | DOWN | ✅ WIN | +$0.58 |
 
 ---
-_Last updated: 2026-05-05T00:05:22.877Z_
+_Last updated: 2026-05-05T00:10:17.981Z_
