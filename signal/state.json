@@ -1,38 +1,15 @@
 {
-  "bankroll": 148.64947547857582,
+  "bankroll": 161.67861132763244,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 830,
-  "paperWins": 109,
+  "paperScanCount": 831,
+  "paperWins": 110,
   "paperLosses": 25,
-  "paperPnl": 128.64947547857585,
+  "paperPnl": 141.67861132763244,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-05T07:28:30.000Z",
-      "retroactive": true,
-      "discoveredAt": "2026-05-05T07:30:29.707Z",
-      "slug": "btc-updown-5m-1777965900",
-      "marketStartTs": 1777965900000,
-      "marketEndTs": 1777966200000,
-      "side": "YES",
-      "entryPrice": 0.53,
-      "observedPrice": 0.51,
-      "sizeUsd": 14.86,
-      "winProb": 0.882,
-      "kellyFStar": 0.748936170212766,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "retroactive (cron drift recovery)"
-      ],
-      "netYesUsdLate": 73.38,
-      "nTradesLate": 3,
-      "hhi": 0.15883724061623633
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -3523,6 +3500,32 @@
       "pnlUsd": 11.0299,
       "won": true,
       "settledAt": "2026-05-05T07:30:29.707Z"
+    },
+    {
+      "emittedAt": "2026-05-05T07:28:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-05T07:30:29.707Z",
+      "slug": "btc-updown-5m-1777965900",
+      "marketStartTs": 1777965900000,
+      "marketEndTs": 1777966200000,
+      "side": "YES",
+      "entryPrice": 0.53,
+      "observedPrice": 0.51,
+      "sizeUsd": 14.86,
+      "winProb": 0.882,
+      "kellyFStar": 0.748936170212766,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": 73.38,
+      "nTradesLate": 3,
+      "hhi": 0.15883724061623633,
+      "outcome": "UP",
+      "pnlUsd": 13.0291,
+      "won": true,
+      "settledAt": "2026-05-05T07:40:25.960Z"
     }
   ],
   "evaluatedSlugs": [
