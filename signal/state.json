@@ -1,37 +1,15 @@
 {
-  "bankroll": 49.011529646683584,
+  "bankroll": 51.37596248250448,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 1923,
-  "paperWins": 236,
+  "paperScanCount": 1924,
+  "paperWins": 237,
   "paperLosses": 80,
-  "paperPnl": 29.011529646683602,
+  "paperPnl": 31.375962482504498,
   "livePnl": 0,
   "openTickets": [
-    {
-      "emittedAt": "2026-05-08T22:58:30.000Z",
-      "retroactive": true,
-      "discoveredAt": "2026-05-08T23:05:23.701Z",
-      "slug": "btc-updown-5m-1778280900",
-      "marketStartTs": 1778280900000,
-      "marketEndTs": 1778281200000,
-      "side": "NO",
-      "entryPrice": 0.67,
-      "observedPrice": 0.65,
-      "sizeUsd": 4.9,
-      "winProb": 0.882,
-      "kellyFStar": 0.6424242424242423,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "retroactive (cron drift recovery)"
-      ],
-      "netYesUsdLate": -27.18,
-      "nTradesLate": 18,
-      "hhi": 0.23922093855172977
-    },
     {
       "emittedAt": "2026-05-08T23:03:30.000Z",
       "retroactive": true,
@@ -8284,6 +8262,32 @@
       "pnlUsd": 1.2977,
       "won": true,
       "settledAt": "2026-05-08T22:25:14.057Z"
+    },
+    {
+      "emittedAt": "2026-05-08T22:58:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-08T23:05:23.701Z",
+      "slug": "btc-updown-5m-1778280900",
+      "marketStartTs": 1778280900000,
+      "marketEndTs": 1778281200000,
+      "side": "NO",
+      "entryPrice": 0.67,
+      "observedPrice": 0.65,
+      "sizeUsd": 4.9,
+      "winProb": 0.882,
+      "kellyFStar": 0.6424242424242423,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": -27.18,
+      "nTradesLate": 18,
+      "hhi": 0.23922093855172977,
+      "outcome": "DOWN",
+      "pnlUsd": 2.3644,
+      "won": true,
+      "settledAt": "2026-05-08T23:10:20.910Z"
     }
   ],
   "evaluatedSlugs": [
