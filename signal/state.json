@@ -1,38 +1,15 @@
 {
-  "bankroll": 20.54060735842557,
+  "bankroll": 21.06504406728633,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 2803,
-  "paperWins": 314,
+  "paperScanCount": 2804,
+  "paperWins": 315,
   "paperLosses": 118,
-  "paperPnl": 0.540607358425608,
+  "paperPnl": 1.0650440672863672,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-11T21:03:30.000Z",
-      "retroactive": true,
-      "discoveredAt": "2026-05-11T21:05:30.691Z",
-      "slug": "btc-updown-5m-1778533200",
-      "marketStartTs": 1778533200000,
-      "marketEndTs": 1778533500000,
-      "side": "YES",
-      "entryPrice": 0.79,
-      "observedPrice": 0.77,
-      "sizeUsd": 2.05,
-      "winProb": 0.882,
-      "kellyFStar": 0.438095238095238,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "retroactive (cron drift recovery)"
-      ],
-      "netYesUsdLate": 133.1761,
-      "nTradesLate": 7,
-      "hhi": 1
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -11278,6 +11255,32 @@
       "pnlUsd": 0.24,
       "won": true,
       "settledAt": "2026-05-11T21:05:30.691Z"
+    },
+    {
+      "emittedAt": "2026-05-11T21:03:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-11T21:05:30.691Z",
+      "slug": "btc-updown-5m-1778533200",
+      "marketStartTs": 1778533200000,
+      "marketEndTs": 1778533500000,
+      "side": "YES",
+      "entryPrice": 0.79,
+      "observedPrice": 0.77,
+      "sizeUsd": 2.05,
+      "winProb": 0.882,
+      "kellyFStar": 0.438095238095238,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": 133.1761,
+      "nTradesLate": 7,
+      "hhi": 1,
+      "outcome": "UP",
+      "pnlUsd": 0.5244,
+      "won": true,
+      "settledAt": "2026-05-11T21:10:22.784Z"
     }
   ],
   "evaluatedSlugs": [
