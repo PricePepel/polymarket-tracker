@@ -1,38 +1,15 @@
 {
-  "bankroll": 17.112623653987566,
+  "bankroll": 18.235523653987567,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 2724,
-  "paperWins": 309,
+  "paperScanCount": 2725,
+  "paperWins": 310,
   "paperLosses": 118,
-  "paperPnl": -2.887376346012397,
+  "paperPnl": -1.7644763460123971,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-11T14:43:30.000Z",
-      "retroactive": true,
-      "discoveredAt": "2026-05-11T14:45:21.024Z",
-      "slug": "btc-updown-5m-1778510400",
-      "marketStartTs": 1778510400000,
-      "marketEndTs": 1778510700000,
-      "side": "NO",
-      "entryPrice": 0.6,
-      "observedPrice": 0.58,
-      "sizeUsd": 1.71,
-      "winProb": 0.882,
-      "kellyFStar": 0.7050000000000001,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "retroactive (cron drift recovery)"
-      ],
-      "netYesUsdLate": -285.75,
-      "nTradesLate": 15,
-      "hhi": 1
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -11148,10 +11125,35 @@
       "pnlUsd": 0.0088,
       "won": true,
       "settledAt": "2026-05-11T14:40:27.582Z"
+    },
+    {
+      "emittedAt": "2026-05-11T14:43:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-11T14:45:21.024Z",
+      "slug": "btc-updown-5m-1778510400",
+      "marketStartTs": 1778510400000,
+      "marketEndTs": 1778510700000,
+      "side": "NO",
+      "entryPrice": 0.6,
+      "observedPrice": 0.58,
+      "sizeUsd": 1.71,
+      "winProb": 0.882,
+      "kellyFStar": 0.7050000000000001,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": -285.75,
+      "nTradesLate": 15,
+      "hhi": 1,
+      "outcome": "DOWN",
+      "pnlUsd": 1.1229,
+      "won": true,
+      "settledAt": "2026-05-11T14:50:28.212Z"
     }
   ],
   "evaluatedSlugs": [
-    "btc-updown-5m-1778389800",
     "btc-updown-5m-1778390100",
     "btc-updown-5m-1778394600",
     "btc-updown-5m-1778394900",
@@ -11350,7 +11352,8 @@
     "btc-updown-5m-1778508900",
     "btc-updown-5m-1778509800",
     "btc-updown-5m-1778510100",
-    "btc-updown-5m-1778510400"
+    "btc-updown-5m-1778510400",
+    "btc-updown-5m-1778510700"
   ],
   "dailyStartBankroll": 27.071128309794222,
   "dailyDate": "2026-05-11",
