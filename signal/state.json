@@ -1,38 +1,15 @@
 {
-  "bankroll": 15.509356098450771,
+  "bankroll": 15.967354792967743,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 2670,
-  "paperWins": 300,
+  "paperScanCount": 2671,
+  "paperWins": 301,
   "paperLosses": 117,
-  "paperPnl": -4.490643901549192,
+  "paperPnl": -4.032645207032221,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-11T10:23:30.000Z",
-      "retroactive": true,
-      "discoveredAt": "2026-05-11T10:25:25.140Z",
-      "slug": "btc-updown-5m-1778494800",
-      "marketStartTs": 1778494800000,
-      "marketEndTs": 1778495100000,
-      "side": "NO",
-      "entryPrice": 0.766,
-      "observedPrice": 0.746,
-      "sizeUsd": 1.55,
-      "winProb": 0.882,
-      "kellyFStar": 0.4957264957264957,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "retroactive (cron drift recovery)"
-      ],
-      "netYesUsdLate": -224.47,
-      "nTradesLate": 14,
-      "hhi": 1
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -10888,6 +10865,32 @@
       "pnlUsd": 0.3211,
       "won": true,
       "settledAt": "2026-05-11T10:25:25.140Z"
+    },
+    {
+      "emittedAt": "2026-05-11T10:23:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-11T10:25:25.140Z",
+      "slug": "btc-updown-5m-1778494800",
+      "marketStartTs": 1778494800000,
+      "marketEndTs": 1778495100000,
+      "side": "NO",
+      "entryPrice": 0.766,
+      "observedPrice": 0.746,
+      "sizeUsd": 1.55,
+      "winProb": 0.882,
+      "kellyFStar": 0.4957264957264957,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": -224.47,
+      "nTradesLate": 14,
+      "hhi": 1,
+      "outcome": "DOWN",
+      "pnlUsd": 0.458,
+      "won": true,
+      "settledAt": "2026-05-11T10:30:29.849Z"
     }
   ],
   "evaluatedSlugs": [
