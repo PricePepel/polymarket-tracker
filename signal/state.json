@@ -1,37 +1,15 @@
 {
-  "bankroll": 8.267745882171827,
+  "bankroll": 8.806212548838493,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 3530,
-  "paperWins": 408,
+  "paperScanCount": 3531,
+  "paperWins": 409,
   "paperLosses": 160,
-  "paperPnl": -11.732254117828147,
+  "paperPnl": -11.19378745116148,
   "livePnl": 0,
   "openTickets": [
-    {
-      "emittedAt": "2026-05-14T07:43:30.000Z",
-      "retroactive": true,
-      "discoveredAt": "2026-05-14T07:45:29.204Z",
-      "slug": "btc-updown-5m-1778744400",
-      "marketStartTs": 1778744400000,
-      "marketEndTs": 1778744700000,
-      "side": "NO",
-      "entryPrice": 0.6,
-      "observedPrice": 0.58,
-      "sizeUsd": 0.82,
-      "winProb": 0.882,
-      "kellyFStar": 0.7050000000000001,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "retroactive (cron drift recovery)"
-      ],
-      "netYesUsdLate": -97.79000000000002,
-      "nTradesLate": 4,
-      "hhi": 0.5965523246410016
-    },
     {
       "emittedAt": "2026-05-14T07:48:30.000Z",
       "retroactive": true,
@@ -14838,6 +14816,32 @@
       "pnlUsd": 0.3958,
       "won": true,
       "settledAt": "2026-05-14T07:45:29.204Z"
+    },
+    {
+      "emittedAt": "2026-05-14T07:43:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-14T07:45:29.204Z",
+      "slug": "btc-updown-5m-1778744400",
+      "marketStartTs": 1778744400000,
+      "marketEndTs": 1778744700000,
+      "side": "NO",
+      "entryPrice": 0.6,
+      "observedPrice": 0.58,
+      "sizeUsd": 0.82,
+      "winProb": 0.882,
+      "kellyFStar": 0.7050000000000001,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": -97.79000000000002,
+      "nTradesLate": 4,
+      "hhi": 0.5965523246410016,
+      "outcome": "DOWN",
+      "pnlUsd": 0.5385,
+      "won": true,
+      "settledAt": "2026-05-14T07:55:31.634Z"
     }
   ],
   "evaluatedSlugs": [
