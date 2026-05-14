@@ -1,38 +1,15 @@
 {
-  "bankroll": 9.749430620970546,
+  "bankroll": 9.98071688813659,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 3463,
-  "paperWins": 400,
+  "paperScanCount": 3464,
+  "paperWins": 401,
   "paperLosses": 156,
-  "paperPnl": -10.250569379029427,
+  "paperPnl": -10.019283111863384,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-14T02:23:30.000Z",
-      "retroactive": true,
-      "discoveredAt": "2026-05-14T02:25:20.147Z",
-      "slug": "btc-updown-5m-1778725200",
-      "marketStartTs": 1778725200000,
-      "marketEndTs": 1778725500000,
-      "side": "YES",
-      "entryPrice": 0.801,
-      "observedPrice": 0.781,
-      "sizeUsd": 0.97,
-      "winProb": 0.882,
-      "kellyFStar": 0.40703517587939686,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "retroactive (cron drift recovery)"
-      ],
-      "netYesUsdLate": 74.3,
-      "nTradesLate": 2,
-      "hhi": 0.9135202392185336
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -14504,6 +14481,32 @@
       "pnlUsd": 0.1422,
       "won": true,
       "settledAt": "2026-05-14T02:05:22.595Z"
+    },
+    {
+      "emittedAt": "2026-05-14T02:23:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-14T02:25:20.147Z",
+      "slug": "btc-updown-5m-1778725200",
+      "marketStartTs": 1778725200000,
+      "marketEndTs": 1778725500000,
+      "side": "YES",
+      "entryPrice": 0.801,
+      "observedPrice": 0.781,
+      "sizeUsd": 0.97,
+      "winProb": 0.882,
+      "kellyFStar": 0.40703517587939686,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": 74.3,
+      "nTradesLate": 2,
+      "hhi": 0.9135202392185336,
+      "outcome": "UP",
+      "pnlUsd": 0.2313,
+      "won": true,
+      "settledAt": "2026-05-14T02:30:25.607Z"
     }
   ],
   "evaluatedSlugs": [
