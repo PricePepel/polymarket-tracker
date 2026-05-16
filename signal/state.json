@@ -13,7 +13,7 @@
     {
       "emittedAt": "2026-05-16T12:08:30.000Z",
       "retroactive": true,
-      "discoveredAt": "2026-05-16T12:10:21.699Z",
+      "discoveredAt": "2026-05-16T12:10:41.119Z",
       "slug": "btc-updown-5m-1778933100",
       "marketStartTs": 1778933100000,
       "marketEndTs": 1778933400000,
@@ -30,7 +30,7 @@
       ],
       "netYesUsdLate": -30.960000000000004,
       "nTradesLate": 17,
-      "hhi": 0.29481192681805973
+      "hhi": 0.233053297603183
     }
   ],
   "closedTickets": [
