@@ -4,7 +4,7 @@
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 4543,
+  "paperScanCount": 4544,
   "paperWins": 519,
   "paperLosses": 207,
   "paperPnl": -16.17494913218092,
@@ -18912,8 +18912,6 @@
     }
   ],
   "evaluatedSlugs": [
-    "btc-updown-5m-1778931900",
-    "btc-updown-5m-1778932200",
     "btc-updown-5m-1778932500",
     "btc-updown-5m-1778932800",
     "btc-updown-5m-1778933100",
@@ -19111,7 +19109,9 @@
     "btc-updown-5m-1779035700",
     "btc-updown-5m-1779036000",
     "btc-updown-5m-1779036300",
-    "btc-updown-5m-1779036600"
+    "btc-updown-5m-1779036600",
+    "btc-updown-5m-1779036900",
+    "btc-updown-5m-1779037200"
   ],
   "dailyStartBankroll": 5.050979751802153,
   "dailyDate": "2026-05-17",
