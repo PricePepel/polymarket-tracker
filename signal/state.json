@@ -1,38 +1,15 @@
 {
-  "bankroll": 1.293788684640189,
+  "bankroll": 1.3555155139084816,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 5892,
-  "paperWins": 709,
+  "paperScanCount": 5893,
+  "paperWins": 710,
   "paperLosses": 287,
-  "paperPnl": -18.706211315359806,
+  "paperPnl": -18.644484486091514,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-22T06:18:30.000Z",
-      "retroactive": true,
-      "discoveredAt": "2026-05-22T06:20:26.591Z",
-      "slug": "btc-updown-5m-1779430500",
-      "marketStartTs": 1779430500000,
-      "marketEndTs": 1779430800000,
-      "side": "NO",
-      "entryPrice": 0.656,
-      "observedPrice": 0.636,
-      "sizeUsd": 0.12,
-      "winProb": 0.882,
-      "kellyFStar": 0.6569767441860465,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "retroactive (cron drift recovery)"
-      ],
-      "netYesUsdLate": -71.53,
-      "nTradesLate": 2,
-      "hhi": 0.625056726812826
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -25957,6 +25934,32 @@
       "pnlUsd": 0.0249,
       "won": true,
       "settledAt": "2026-05-22T05:55:25.116Z"
+    },
+    {
+      "emittedAt": "2026-05-22T06:18:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-22T06:20:26.591Z",
+      "slug": "btc-updown-5m-1779430500",
+      "marketStartTs": 1779430500000,
+      "marketEndTs": 1779430800000,
+      "side": "NO",
+      "entryPrice": 0.656,
+      "observedPrice": 0.636,
+      "sizeUsd": 0.12,
+      "winProb": 0.882,
+      "kellyFStar": 0.6569767441860465,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": -71.53,
+      "nTradesLate": 2,
+      "hhi": 0.625056726812826,
+      "outcome": "DOWN",
+      "pnlUsd": 0.0617,
+      "won": true,
+      "settledAt": "2026-05-22T06:25:26.271Z"
     }
   ],
   "evaluatedSlugs": [
