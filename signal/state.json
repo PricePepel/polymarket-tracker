@@ -1,15 +1,38 @@
 {
-  "bankroll": 1.0910141071902277,
+  "bankroll": 1.1137764834278514,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 5852,
-  "paperWins": 696,
+  "paperScanCount": 5853,
+  "paperWins": 697,
   "paperLosses": 283,
-  "paperPnl": -18.90898589280976,
+  "paperPnl": -18.886223516572137,
   "livePnl": 0,
-  "openTickets": [],
+  "openTickets": [
+    {
+      "emittedAt": "2026-05-22T03:03:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-22T03:05:24.707Z",
+      "slug": "btc-updown-5m-1779418800",
+      "marketStartTs": 1779418800000,
+      "marketEndTs": 1779419100000,
+      "side": "YES",
+      "entryPrice": 0.671,
+      "observedPrice": 0.651,
+      "sizeUsd": 0.1,
+      "winProb": 0.882,
+      "kellyFStar": 0.6413373860182371,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": 78.60000000000001,
+      "nTradesLate": 6,
+      "hhi": 0.2880560520607862
+    }
+  ],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -25492,11 +25515,35 @@
       "pnlUsd": 0.0714,
       "won": true,
       "settledAt": "2026-05-22T02:50:26.558Z"
+    },
+    {
+      "emittedAt": "2026-05-22T02:58:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-22T03:05:24.707Z",
+      "slug": "btc-updown-5m-1779418500",
+      "marketStartTs": 1779418500000,
+      "marketEndTs": 1779418800000,
+      "side": "YES",
+      "entryPrice": 0.808,
+      "observedPrice": 0.788,
+      "sizeUsd": 0.1,
+      "winProb": 0.882,
+      "kellyFStar": 0.3854166666666665,
+      "kellyFUsed": 0.09635416666666663,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": 76.8,
+      "nTradesLate": 4,
+      "hhi": 0.18748868528532542,
+      "outcome": "UP",
+      "pnlUsd": 0.0228,
+      "won": true,
+      "settledAt": "2026-05-22T03:05:24.707Z"
     }
   ],
   "evaluatedSlugs": [
-    "btc-updown-5m-1779325500",
-    "btc-updown-5m-1779325800",
     "btc-updown-5m-1779326100",
     "btc-updown-5m-1779327300",
     "btc-updown-5m-1779327600",
@@ -25694,7 +25741,9 @@
     "btc-updown-5m-1779417300",
     "btc-updown-5m-1779417600",
     "btc-updown-5m-1779417900",
-    "btc-updown-5m-1779418200"
+    "btc-updown-5m-1779418200",
+    "btc-updown-5m-1779418500",
+    "btc-updown-5m-1779418800"
   ],
   "dailyStartBankroll": 1.2227505948646606,
   "dailyDate": "2026-05-22",
