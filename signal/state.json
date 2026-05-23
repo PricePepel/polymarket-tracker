@@ -1,38 +1,15 @@
 {
-  "bankroll": 0.6188943010987608,
+  "bankroll": 0.6529315250735241,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 6147,
-  "paperWins": 748,
+  "paperScanCount": 6148,
+  "paperWins": 749,
   "paperLosses": 308,
-  "paperPnl": -19.38110569890125,
+  "paperPnl": -19.347068474926488,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-23T03:13:30.000Z",
-      "retroactive": true,
-      "discoveredAt": "2026-05-23T03:15:27.744Z",
-      "slug": "btc-updown-5m-1779505800",
-      "marketStartTs": 1779505800000,
-      "marketEndTs": 1779506100000,
-      "side": "YES",
-      "entryPrice": 0.634,
-      "observedPrice": 0.614,
-      "sizeUsd": 0.06,
-      "winProb": 0.882,
-      "kellyFStar": 0.6775956284153006,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "retroactive (cron drift recovery)"
-      ],
-      "netYesUsdLate": 66.2,
-      "nTradesLate": 2,
-      "hhi": 0.42379293414966646
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -27543,6 +27520,32 @@
       "pnlUsd": 0.0188,
       "won": true,
       "settledAt": "2026-05-23T03:15:27.744Z"
+    },
+    {
+      "emittedAt": "2026-05-23T03:13:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-23T03:15:27.744Z",
+      "slug": "btc-updown-5m-1779505800",
+      "marketStartTs": 1779505800000,
+      "marketEndTs": 1779506100000,
+      "side": "YES",
+      "entryPrice": 0.634,
+      "observedPrice": 0.614,
+      "sizeUsd": 0.06,
+      "winProb": 0.882,
+      "kellyFStar": 0.6775956284153006,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": 66.2,
+      "nTradesLate": 2,
+      "hhi": 0.42379293414966646,
+      "outcome": "UP",
+      "pnlUsd": 0.034,
+      "won": true,
+      "settledAt": "2026-05-23T03:20:30.410Z"
     }
   ],
   "evaluatedSlugs": [
