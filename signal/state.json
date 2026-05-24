@@ -1,38 +1,15 @@
 {
-  "bankroll": 0.6894780615307013,
+  "bankroll": 0.7088780615307013,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 6586,
-  "paperWins": 800,
+  "paperScanCount": 6587,
+  "paperWins": 801,
   "paperLosses": 326,
-  "paperPnl": -19.310521938469307,
+  "paperPnl": -19.291121938469306,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-24T15:48:30.000Z",
-      "retroactive": true,
-      "discoveredAt": "2026-05-24T15:55:29.381Z",
-      "slug": "btc-updown-5m-1779637500",
-      "marketStartTs": 1779637500000,
-      "marketEndTs": 1779637800000,
-      "side": "YES",
-      "entryPrice": 0.75,
-      "observedPrice": 0.73,
-      "sizeUsd": 0.06,
-      "winProb": 0.882,
-      "kellyFStar": 0.528,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "retroactive (cron drift recovery)"
-      ],
-      "netYesUsdLate": 279.96999999999997,
-      "nTradesLate": 14,
-      "hhi": 0.3886010730967745
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -29365,6 +29342,32 @@
       "pnlUsd": 0.0264,
       "won": true,
       "settledAt": "2026-05-24T14:55:30.100Z"
+    },
+    {
+      "emittedAt": "2026-05-24T15:48:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-24T15:55:29.381Z",
+      "slug": "btc-updown-5m-1779637500",
+      "marketStartTs": 1779637500000,
+      "marketEndTs": 1779637800000,
+      "side": "YES",
+      "entryPrice": 0.75,
+      "observedPrice": 0.73,
+      "sizeUsd": 0.06,
+      "winProb": 0.882,
+      "kellyFStar": 0.528,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": 279.96999999999997,
+      "nTradesLate": 14,
+      "hhi": 0.3886010730967745,
+      "outcome": "UP",
+      "pnlUsd": 0.0194,
+      "won": true,
+      "settledAt": "2026-05-24T16:00:45.348Z"
     }
   ],
   "evaluatedSlugs": [
