@@ -8,7 +8,7 @@ _Do not edit by hand — changes will be overwritten._
 - **Bankroll:** $0.54 (started $20.00)
 - **All-time PnL:** -$19.46 (-97.31%)
 - **Mode:** PAPER
-- **W/L:** 906 / 366  (hit rate 71%)
+- **W/L:** 905 / 366  (hit rate 71%)
 - **Scans completed:** 7416
 - **Open tickets:** 0
 - **Consecutive losses:** 0
@@ -1479,4 +1479,4 @@ Day PnL: **+$0.58** · W/L: **1/0** · trades: 1
 | 13:29 | NO | $0.770 | $2.00 | DOWN | ✅ WIN | +$0.58 |
 
 ---
-_Last updated: 2026-05-27T14:05:37.732Z_
+_Last updated: 2026-05-27T14:06:15.345Z_
