@@ -1,38 +1,15 @@
 {
-  "bankroll": 0.7504525350796841,
+  "bankroll": 0.7706616259887751,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 7745,
-  "paperWins": 941,
+  "paperScanCount": 7746,
+  "paperWins": 942,
   "paperLosses": 376,
-  "paperPnl": -19.24954746492037,
+  "paperPnl": -19.229338374011277,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-28T16:58:30.000Z",
-      "retroactive": true,
-      "discoveredAt": "2026-05-28T17:05:32.623Z",
-      "slug": "btc-updown-5m-1779987300",
-      "marketStartTs": 1779987300000,
-      "marketEndTs": 1779987600000,
-      "side": "YES",
-      "entryPrice": 0.77,
-      "observedPrice": 0.75,
-      "sizeUsd": 0.07,
-      "winProb": 0.882,
-      "kellyFStar": 0.48695652173913045,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "retroactive (cron drift recovery)"
-      ],
-      "netYesUsdLate": 289.24,
-      "nTradesLate": 53,
-      "hhi": 0.27379703272435635
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -34364,6 +34341,32 @@
       "pnlUsd": 0.0239,
       "won": true,
       "settledAt": "2026-05-28T16:40:51.036Z"
+    },
+    {
+      "emittedAt": "2026-05-28T16:58:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-28T17:05:32.623Z",
+      "slug": "btc-updown-5m-1779987300",
+      "marketStartTs": 1779987300000,
+      "marketEndTs": 1779987600000,
+      "side": "YES",
+      "entryPrice": 0.77,
+      "observedPrice": 0.75,
+      "sizeUsd": 0.07,
+      "winProb": 0.882,
+      "kellyFStar": 0.48695652173913045,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": 289.24,
+      "nTradesLate": 53,
+      "hhi": 0.27379703272435635,
+      "outcome": "UP",
+      "pnlUsd": 0.0202,
+      "won": true,
+      "settledAt": "2026-05-28T17:10:40.561Z"
     }
   ],
   "evaluatedSlugs": [
