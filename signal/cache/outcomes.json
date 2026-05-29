@@ -6490,5 +6490,11 @@
     "outcome": "UP",
     "closedTime": "2026-05-29 09:40:16+00",
     "volume": 676.8750809999999
+  },
+  "btc-updown-5m-1780049100": {
+    "slug": "btc-updown-5m-1780049100",
+    "outcome": "DOWN",
+    "closedTime": "2026-05-29 10:10:20+00",
+    "volume": 386.041763
   }
 }
