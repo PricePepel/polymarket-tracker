@@ -1,38 +1,15 @@
 {
-  "bankroll": 0.2832269348073454,
+  "bankroll": 0.2993905711709818,
   "startingBankroll": 20,
   "mode": "PAPER",
   "consecutiveLosses": 0,
   "paperRemainingScans": 0,
-  "paperScanCount": 8152,
-  "paperWins": 999,
+  "paperScanCount": 8153,
+  "paperWins": 1000,
   "paperLosses": 404,
-  "paperPnl": -19.71677306519273,
+  "paperPnl": -19.700609428829093,
   "livePnl": 0,
-  "openTickets": [
-    {
-      "emittedAt": "2026-05-30T02:13:30.000Z",
-      "retroactive": true,
-      "discoveredAt": "2026-05-30T02:15:34.779Z",
-      "slug": "btc-updown-5m-1780107000",
-      "marketStartTs": 1780107000000,
-      "marketEndTs": 1780107300000,
-      "side": "NO",
-      "entryPrice": 0.55,
-      "observedPrice": 0.53,
-      "sizeUsd": 0.02,
-      "winProb": 0.882,
-      "kellyFStar": 0.7377777777777778,
-      "kellyFUsed": 0.1,
-      "mode": "PAPER",
-      "riskNotes": [
-        "retroactive (cron drift recovery)"
-      ],
-      "netYesUsdLate": -65.77,
-      "nTradesLate": 7,
-      "hhi": 0.8600952034709621
-    }
-  ],
+  "openTickets": [],
   "closedTickets": [
     {
       "emittedAt": "2026-05-01T13:29:07.412Z",
@@ -36603,6 +36580,32 @@
       "pnlUsd": 0.0042,
       "won": true,
       "settledAt": "2026-05-30T02:10:39.192Z"
+    },
+    {
+      "emittedAt": "2026-05-30T02:13:30.000Z",
+      "retroactive": true,
+      "discoveredAt": "2026-05-30T02:15:34.779Z",
+      "slug": "btc-updown-5m-1780107000",
+      "marketStartTs": 1780107000000,
+      "marketEndTs": 1780107300000,
+      "side": "NO",
+      "entryPrice": 0.55,
+      "observedPrice": 0.53,
+      "sizeUsd": 0.02,
+      "winProb": 0.882,
+      "kellyFStar": 0.7377777777777778,
+      "kellyFUsed": 0.1,
+      "mode": "PAPER",
+      "riskNotes": [
+        "retroactive (cron drift recovery)"
+      ],
+      "netYesUsdLate": -65.77,
+      "nTradesLate": 7,
+      "hhi": 0.8600952034709621,
+      "outcome": "DOWN",
+      "pnlUsd": 0.0162,
+      "won": true,
+      "settledAt": "2026-05-30T02:20:35.910Z"
     }
   ],
   "evaluatedSlugs": [
