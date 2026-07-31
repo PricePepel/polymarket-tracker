@@ -38926,8 +38926,6 @@
     }
   ],
   "evaluatedSlugs": [
-    "btc-updown-5m-1785382800",
-    "btc-updown-5m-1785383100",
     "btc-updown-5m-1785383400",
     "btc-updown-5m-1785383700",
     "btc-updown-5m-1785384000",
@@ -39125,7 +39123,9 @@
     "btc-updown-5m-1785529800",
     "btc-updown-5m-1785530100",
     "btc-updown-5m-1785530400",
-    "btc-updown-5m-1785530700"
+    "btc-updown-5m-1785530700",
+    "btc-updown-5m-1785531900",
+    "btc-updown-5m-1785532200"
   ],
   "dailyStartBankroll": 0.09702169805062526,
   "dailyDate": "2026-07-31",
