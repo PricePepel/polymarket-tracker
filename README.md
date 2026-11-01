@@ -1,11 +1,21 @@
-# Polymarket BTC 5m Tracker
+# polymarket-tracker
 
-Logs the top 50 Polymarket CRYPTO traders' bets on **BTC up/down 5m** markets, every 15 minutes.
+A self-running research agent for Polymarket's BTC up/down 5-minute markets. It logs the top 50 CRYPTO traders' bets and feeds a signal layer that issues paper tickets.
 
-Two ways it can run:
+**Paper-traded only. Never deployed with real capital, and nothing here is financial advice.**
 
-1. **Cloud (GitHub Actions)** — runs every 15 min on GitHub's infrastructure, even when your computer is off. Commits new trades to `data/btc-5m/YYYY-MM-DD.md` in this repo. **This is the default.**
-2. **Local (Windows Task Scheduler)** — optional. Runs the same script on your machine and writes via the Obsidian Local REST API directly into your vault. Useful as a fallback or for instant refresh.
+## How it stays up
+
+- **Two triggers:** an external cron-job.org ping and the GitHub Actions schedule both start the same scan, so one failing doesn't stop the run.
+- **Races resolve themselves:** cron-vs-cron collisions go through an auto-resolving rebase instead of failing the job.
+- **Missed markets get recovered:** a 10-minute lookback over recently closed slugs catches markets that cron drift skipped.
+- **State is idempotent:** `signal/PAPER-TRADER-LOG.md` regenerates entirely from `signal/state.json`, which makes recovery safe to rerun.
+- **Strategy stays locked:** parameters were set by walk-forward validation and aren't re-tuned after deployment, to avoid look-back overfitting.
+
+## Running it
+
+1. **Cloud (GitHub Actions), the default.** Runs on GitHub's infrastructure and commits new trades to `data/btc-5m/YYYY-MM-DD.md`.
+2. **Local, optional.** Runs the same script on your machine and writes through the Obsidian Local REST API.
 
 ## How the data reaches Obsidian
 
@@ -35,12 +45,12 @@ Each scan adds a section like this to today's file:
 | `package.json` | Project metadata |
 | `state.json` | Last seen timestamp + recent transaction hashes (committed by CI) |
 | `data/btc-5m/YYYY-MM-DD.md` | Daily trade log (committed by CI) |
-| `.github/workflows/scan.yml` | GitHub Actions cron — every 15 min |
+| `.github/workflows/scan.yml` | GitHub Actions cron, every 5 min |
 | `run.bat.example` | Template for the local wrapper (copy to `run.bat` and fill in your API key) |
 
 ## Cloud mode (GitHub Actions)
 
-Already configured. Runs automatically every 15 min — see the **Actions** tab on GitHub.
+Already configured. It runs on the schedule in `scan.yml`; see the **Actions** tab on GitHub.
 
 To trigger a one-off run: GitHub repo → Actions → "Polymarket BTC 5m scan" → Run workflow.
 
@@ -49,7 +59,7 @@ To pause: disable the workflow on the Actions tab.
 ## Local mode (manual or scheduled)
 
 ```powershell
-cd C:\Users\Asus\Desktop\polymarket-tracker
+cd polymarket-tracker
 
 # Dry run — no writes
 node track.mjs --dry-run
@@ -60,22 +70,6 @@ node track.mjs --dry-run
 # Or run as the same script GitHub Actions uses (writes to ./data/)
 $env:OUTPUT_MODE="file"; node track.mjs
 ```
-
-### Windows scheduled task
-
-Already registered as **`PolymarketTracker`** (every 15 min, runs `run.bat`). Manage with:
-
-```powershell
-Get-ScheduledTask -TaskName PolymarketTracker
-Get-ScheduledTaskInfo -TaskName PolymarketTracker
-
-Start-ScheduledTask -TaskName PolymarketTracker        # run now
-Disable-ScheduledTask -TaskName PolymarketTracker      # pause
-Enable-ScheduledTask -TaskName PolymarketTracker
-Unregister-ScheduledTask -TaskName PolymarketTracker -Confirm:$false  # remove
-```
-
-If you're using cloud mode, you can disable the local task — it's redundant.
 
 ## Tuning
 
