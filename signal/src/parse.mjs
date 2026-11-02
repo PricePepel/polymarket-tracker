@@ -1,12 +1,12 @@
 // Parse polymarket-tracker scan logs into canonical trade objects.
 //
 // Input: markdown files under
-//   C:\Users\Asus\Documents\Obsidian Vault\Polymarket-Tracker\data\btc-5m\YYYY-MM-DD.md
+//   data/btc-5m/YYYY-MM-DD.md
 // Each tracked trade is a single line of the form:
 //   - `HH:MM:SSZ` [#RANK] **Name** | `0xWALLET…` [profile](URL) — **SIDE OUTCOME** SIZE @ $PRICE ($USD) → [Title](https://polymarket.com/event/btc-updown-5m-EPOCH)
 //
 // Output: array of canonical trades:
-//   { slug, marketStartTs, marketEndTs, tradeTs, rank, wallet, name, side, outcome, size, price, usd, raw }
+//   { slug, marketStartTs, marketEndTs, tradeTs, rank, wallet, name, side, outcome, size, price, usd }
 //
 // All timestamps are in UTC milliseconds. marketEndTs = marketStartTs + 5min.
 
@@ -77,7 +77,6 @@ export function parseLine(line) {
     size: Number(sizeStr),
     price: Number(priceStr),
     usd: Number(usdStr),
-    raw: line,
   };
 }
 
@@ -94,29 +93,31 @@ export function parseFile(filePath) {
   return { trades, skipped };
 }
 
+// Takes a directory of daily logs, or a single day's file.
 export function parseDir(dirPath) {
-  const files = fs
-    .readdirSync(dirPath)
-    .filter((f) => /^\d{4}-\d{2}-\d{2}\.md$/.test(f))
-    .sort()
-    .map((f) => path.join(dirPath, f));
-  const all = [];
+  const files = fs.statSync(dirPath).isFile()
+    ? [dirPath]
+    : fs
+        .readdirSync(dirPath)
+        .filter((f) => /^\d{4}-\d{2}-\d{2}\.md$/.test(f))
+        .sort()
+        .map((f) => path.join(dirPath, f));
   let totalSkipped = 0;
-  for (const f of files) {
-    const { trades, skipped } = parseFile(f);
-    all.push(...trades);
-    totalSkipped += skipped;
-  }
   // Dedup by (wallet, tradeTs, slug, side, outcome, size, price) — tracker can
   // theoretically log the same trade twice across overlapping scans, even with
   // its hash dedup, if we're paranoid.
   const seen = new Set();
   const deduped = [];
-  for (const t of all) {
-    const k = `${t.wallet}|${t.tradeTs}|${t.slug}|${t.side}|${t.outcome}|${t.size}|${t.price}`;
-    if (seen.has(k)) continue;
-    seen.add(k);
-    deduped.push(t);
+  // Deduped file by file: the full log set is over a gigabyte.
+  for (const f of files) {
+    const { trades, skipped } = parseFile(f);
+    totalSkipped += skipped;
+    for (const t of trades) {
+      const k = `${t.wallet}|${t.tradeTs}|${t.slug}|${t.side}|${t.outcome}|${t.size}|${t.price}`;
+      if (seen.has(k)) continue;
+      seen.add(k);
+      deduped.push(t);
+    }
   }
   // Sort ascending by trade time
   deduped.sort((a, b) => a.tradeTs - b.tradeTs);

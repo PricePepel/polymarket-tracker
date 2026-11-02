@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 // Run the backtest with a parameter sweep and print a summary table.
 
+import { fileURLToPath } from "node:url";
 import fs from "node:fs";
 import path from "node:path";
 import { parseDir, groupByMarket } from "../src/parse.mjs";
 import { runBacktest } from "../src/backtest.mjs";
 
 const DEFAULT_DATA_DIR =
-  "C:\\Users\\Asus\\Documents\\Obsidian Vault\\Polymarket-Tracker\\data\\btc-5m";
+  fileURLToPath(new URL("../../data/btc-5m", import.meta.url));
 const dataDir = process.argv[2] || DEFAULT_DATA_DIR;
 const cachePath = path.join(
   path.dirname(new URL(import.meta.url).pathname).replace(/^\//, ""),

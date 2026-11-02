@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node track.mjs",
     "dry-run": "node track.mjs --dry-run",
+    "test": "npm --prefix signal test",
     "reset": "node -e \"require('fs').writeFileSync('state.json', '{}')\""
   },
   "engines": {
