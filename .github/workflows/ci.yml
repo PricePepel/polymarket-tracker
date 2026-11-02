@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    # Scan commits only touch data, so they don't need a test run.
+    paths-ignore:
+      - "data/**"
+      - "state.json"
+      - "signal/state.json"
+      - "signal/tickets/**"
+      - "signal/PAPER-TRADER-LOG.md"
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run tests
+        run: npm test
+      - name: Run the stats script on one day of data
+        run: node signal/bin/stats.mjs data/btc-5m/2026-05-01.md

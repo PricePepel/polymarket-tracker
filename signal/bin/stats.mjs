@@ -2,11 +2,12 @@
 // Quick sanity stats over the existing scan data.
 // Usage: node bin/stats.mjs [DATA_DIR]
 
+import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { parseDir, groupByMarket, netYesUsd } from "../src/parse.mjs";
 
 const DEFAULT_DATA_DIR =
-  "C:\\Users\\Asus\\Documents\\Obsidian Vault\\Polymarket-Tracker\\data\\btc-5m";
+  fileURLToPath(new URL("../../data/btc-5m", import.meta.url));
 const dataDir = process.argv[2] || DEFAULT_DATA_DIR;
 
 const { trades, totalSkipped } = parseDir(dataDir);

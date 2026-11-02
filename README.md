@@ -1,5 +1,7 @@
 # polymarket-tracker
 
+[![CI](https://github.com/PricePepel/polymarket-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/PricePepel/polymarket-tracker/actions/workflows/ci.yml)
+
 A research agent for Polymarket's BTC up/down 5-minute markets. It logs the top 50 CRYPTO traders' bets and feeds a signal layer that issues paper tickets. Scanning has been paused since October 28, 2026.
 
 **Paper-traded only. Never deployed with real capital, and nothing here is financial advice.**
@@ -23,6 +25,18 @@ The signal was right far more often than chance, but the market prices already r
 - **Missed markets get recovered:** a 10-minute lookback over recently closed slugs catches markets that cron drift skipped.
 - **State is idempotent:** `signal/PAPER-TRADER-LOG.md` regenerates entirely from `signal/state.json`, which makes recovery safe to rerun.
 - **Strategy stays locked:** parameters were set by walk-forward validation and aren't re-tuned after deployment, to avoid look-back overfitting.
+
+## Try it
+
+Needs Node 20 or newer, and there's nothing to install. The repo holds about 1.4 GB of scan logs, so cloning takes a few minutes.
+
+```bash
+npm test                     # tests, including one that checks the results above against the data
+node track.mjs --dry-run     # one real scan of Polymarket, without writing anything
+node signal/bin/stats.mjs data/btc-5m/2026-05-01.md    # stats for one day of logs
+```
+
+The analysis scripts load trades into memory, so point them at a day or a small folder. The full log set is too large for Node's default heap.
 
 ## Running it
 
@@ -54,6 +68,10 @@ Each scan adds a section like this to today's file:
 | File | Purpose |
 |------|---------|
 | `track.mjs` | Main script — Node.js 20+ (no deps; uses built-in fetch) |
+| `signal/src/` | Features, sizing and paper-ticket logic |
+| `signal/bin/` | Stats, backtest and walk-forward scripts |
+| `signal/tests/` | Tests for sizing, features, parsing and the published results |
+| `signal/state.json` | Paper-trading state, the source of `PAPER-TRADER-LOG.md` |
 | `package.json` | Project metadata |
 | `state.json` | Last seen timestamp + recent transaction hashes (committed by CI) |
 | `data/btc-5m/YYYY-MM-DD.md` | Daily trade log (committed by CI) |

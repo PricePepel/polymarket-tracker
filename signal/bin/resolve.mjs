@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 // Resolve all historical markets present in the scan logs and cache outcomes.
 
+import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { parseDir, groupByMarket } from "../src/parse.mjs";
 import { resolveAll } from "../src/resolve.mjs";
 
 const DEFAULT_DATA_DIR =
-  "C:\\Users\\Asus\\Documents\\Obsidian Vault\\Polymarket-Tracker\\data\\btc-5m";
+  fileURLToPath(new URL("../../data/btc-5m", import.meta.url));
 const dataDir = process.argv[2] || DEFAULT_DATA_DIR;
 const cachePath = path.join(
   path.dirname(new URL(import.meta.url).pathname).replace(/^\//, ""),

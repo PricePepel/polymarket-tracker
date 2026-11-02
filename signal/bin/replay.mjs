@@ -5,6 +5,7 @@
 //
 // Usage: node bin/replay.mjs [N=30]
 
+import { fileURLToPath } from "node:url";
 import fs from "node:fs";
 import path from "node:path";
 import { parseDir, groupByMarket } from "../src/parse.mjs";
@@ -16,7 +17,7 @@ const root = path.resolve(
 );
 const dataDir =
   process.env.SIGNAL_DATA_DIR ||
-  "C:\\Users\\Asus\\Documents\\Obsidian Vault\\Polymarket-Tracker\\data\\btc-5m";
+  fileURLToPath(new URL("../../data/btc-5m", import.meta.url));
 
 const N = Number(process.argv[2] || 30);
 
