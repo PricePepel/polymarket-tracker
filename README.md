@@ -1,10 +1,22 @@
 # polymarket-tracker
 
-A self-running research agent for Polymarket's BTC up/down 5-minute markets. It logs the top 50 CRYPTO traders' bets and feeds a signal layer that issues paper tickets.
+A research agent for Polymarket's BTC up/down 5-minute markets. It logs the top 50 CRYPTO traders' bets and feeds a signal layer that issues paper tickets. Scanning has been paused since October 28, 2026.
 
 **Paper-traded only. Never deployed with real capital, and nothing here is financial advice.**
 
-## How it stays up
+## Results
+
+| Measure | Result |
+|---|---|
+| Settled paper trades | 1,493 (1,053 wins, 440 losses), all in May 2026 |
+| Hit rate | 70.5% (95% CI about 68% to 73%) |
+| Break-even hit rate at the prices paid | about 70.4%, size-weighted |
+| Win probability the strategy assumed | 88.2% |
+| Paper bankroll | $20.00 start, $202.84 peak on May 5, $0.10 final (-99.51%) |
+
+The signal was right far more often than chance, but the market prices already reflected it, so there was no edge. Sizing at up to 10% of bankroll then turned no edge into a near-total loss. Live numbers are in [`signal/PAPER-TRADER-LOG.md`](signal/PAPER-TRADER-LOG.md), and the [case study](https://github.com/PricePepel/kan-case-studies/blob/main/polymarket.md) explains what happened.
+
+## How it stayed up
 
 - **Two triggers:** an external cron-job.org ping and the GitHub Actions schedule both start the same scan, so one failing doesn't stop the run.
 - **Races resolve themselves:** cron-vs-cron collisions go through an auto-resolving rebase instead of failing the job.
@@ -14,7 +26,7 @@ A self-running research agent for Polymarket's BTC up/down 5-minute markets. It 
 
 ## Running it
 
-1. **Cloud (GitHub Actions), the default.** Runs on GitHub's infrastructure and commits new trades to `data/btc-5m/YYYY-MM-DD.md`.
+1. **Cloud (GitHub Actions).** Runs on GitHub's infrastructure and commits new trades to `data/btc-5m/YYYY-MM-DD.md`.
 2. **Local, optional.** Runs the same script on your machine and writes through the Obsidian Local REST API.
 
 ## How the data reaches Obsidian
@@ -50,11 +62,9 @@ Each scan adds a section like this to today's file:
 
 ## Cloud mode (GitHub Actions)
 
-Already configured. It runs on the schedule in `scan.yml`; see the **Actions** tab on GitHub.
+The schedule is in `scan.yml`. The workflow is currently disabled on the **Actions** tab, so nothing runs until it's enabled again.
 
-To trigger a one-off run: GitHub repo → Actions → "Polymarket BTC 5m scan" → Run workflow.
-
-To pause: disable the workflow on the Actions tab.
+To trigger a one-off run once it's enabled: GitHub repo → Actions → "Polymarket BTC 5m scan" → Run workflow.
 
 ## Local mode (manual or scheduled)
 
